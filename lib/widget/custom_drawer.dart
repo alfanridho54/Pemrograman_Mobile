@@ -1,3 +1,4 @@
+import 'package:first_project/pages/props_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/home.dart';
 import '../pages/second_page.dart';
@@ -5,6 +6,8 @@ import '../pages/contact_page.dart';
 import '../pages/about_page.dart';
 
 class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +50,14 @@ class CustomDrawer extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage()));
             }
           ),
+          ListTile(
+            leading: Icon(Icons.pages),
+            title: Text('Props Page'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PropsPage()));
+            }
+          )
           
           
         ],

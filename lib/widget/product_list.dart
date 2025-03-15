@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
-import '../data/product_data.dart';
+// import '../data/product_data.dart';
 import 'product_cart.dart';
 
-class ProductList extends StatefulWidget{
-  @override
-  _ProductListState createState() => _ProductListState();
+// class ProductList extends StatefulWidget{
+//   @override
+//   _ProductListState createState() => _ProductListState();
 
-}
+// }
 
-class _ProductListState extends State<ProductList>{
-  List<Map<String, dynamic>> product = List.from(produkData);
 
+// class _ProductListState extends State<ProductList>{
+class ProductList extends StatelessWidget {
+  
+
+  // List<Map<String, dynamic>> product = List.from(produkData);
+  final List<Map<String, dynamic>> produk;
+
+  ProductList({required this.produk});
   void toggleFavorite(int index) {
-    setState(() {
-      produkData[index]['isFavorite'] = !(produkData[index]['isFavorite'] ?? false);
-    });
+    // setState(() {
+    // });
+      produk[index]['isFavorite'] = !(produk[index]['isFavorite'] ?? false);
   }
 
   @override
@@ -29,14 +35,14 @@ class _ProductListState extends State<ProductList>{
                 mainAxisSpacing: 10,
                 childAspectRatio: 0.75, // Mengatur aspek agar tidak numpuk
               ),
-              itemCount: produkData.length,
+              itemCount: produk.length,
               itemBuilder: (context, index) {
                 return ProductCard(
-                  name: produkData[index]['name'] ?? 'Unknown',
-                  price: produkData[index]['price']?.toString() ?? '0',
-                  isFavorite: produkData[index]['isFavorite'] ?? false,
+                  name: produk[index]['name'] ?? 'Unknown',
+                  price: produk[index]['price']?.toString() ?? '0',
+                  isFavorite: produk[index]['isFavorite'] ?? false,
                   toggleFavorite: () => toggleFavorite(index),
-                  imageURL: produkData[index]['image'] ?? '',
+                  imageURL: produk[index]['image'] ?? '',
                 );
               },
             ),
