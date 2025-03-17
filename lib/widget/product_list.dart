@@ -16,7 +16,7 @@ class ProductList extends StatelessWidget {
   // List<Map<String, dynamic>> product = List.from(produkData);
   final List<Map<String, dynamic>> produk;
 
-  ProductList({required this.produk});
+  const ProductList({super.key, required this.produk});
   void toggleFavorite(int index) {
     // setState(() {
     // });
@@ -41,6 +41,7 @@ class ProductList extends StatelessWidget {
                   name: produk[index]['name'] ?? 'Unknown',
                   price: produk[index]['price']?.toString() ?? '0',
                   isFavorite: produk[index]['isFavorite'] ?? false,
+                  description: produk[index]['deskripsi'] ?? '',
                   toggleFavorite: () => toggleFavorite(index),
                   imageURL: produk[index]['image'] ?? '',
                 );

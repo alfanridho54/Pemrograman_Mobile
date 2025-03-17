@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AddProductPage extends StatefulWidget {
+  const AddProductPage({super.key});
 
+
+  @override
   _AddProductPageState createState() => _AddProductPageState();
 }
 
